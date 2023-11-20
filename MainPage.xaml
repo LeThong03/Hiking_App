@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Hiking_App.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="20"
+            Padding="10,0"
+            VerticalOptions="Start"
+            HorizontalOptions="FillAndExpand">
+
+            <Frame  Padding="5" CornerRadius="4">
+                <Label Text="Hiking Trip" HorizontalTextAlignment="Center"
+                       TextColor="BlueViolet" FontSize="Title"/>
+            </Frame>
+            <HorizontalStackLayout HorizontalOptions="FillAndExpand">
+                <Label Text="Name" VerticalOptions="Center" Margin="0,0,30,0"
+                       HorizontalOptions="Start"/>
+
+                <Entry x:Name="txtName" HorizontalOptions="StartAndExpand"
+                       Placeholder="Enter Name" VerticalOptions="Center"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout HorizontalOptions="FillAndExpand">
+                <Label Text="Location" VerticalOptions="Center" Margin="0,0,30,0"
+                       HorizontalOptions="Start"/>
+
+                <Entry x:Name="txtLocation" HorizontalOptions="StartAndExpand"
+                       Placeholder="Enter Location" VerticalOptions="Center"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Label Text="Date of hike" VerticalOptions="Center" Margin="0,0,30,0"/>
+                <DatePicker x:Name="dtpDateofHike" Format="dd/MM/yyyy"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Label Text="Difficult of Hike" VerticalOptions="Center" Margin="0,0,30,0"/>
+                <Picker x:Name="cbxDifficult" Title="Please select" HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Center">
+                    <Picker.Items>
+                        <x:String>Easy</x:String>
+                        <x:String>Moderate</x:String>
+                        <x:String>Hard</x:String>
+                    </Picker.Items>
+                </Picker>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Label Text="Parking" VerticalOptions="Center" Margin="0,0,30,0"/>
+                <Switch x:Name="swtParking" VerticalOptions="Center"></Switch>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout HorizontalOptions="FillAndExpand">
+                <Label Text="Description" VerticalOptions="Center" Margin="0,0,30,0"
+                       HorizontalOptions="Start"/>
+
+                <Entry x:Name="txtDescription" HorizontalOptions="StartAndExpand"
+                       Placeholder="Description" VerticalOptions="Center"/>
+            </HorizontalStackLayout>
+            <Button x:Name ="btnSubmit" Text="Submit" Clicked="btnSubmit_Clicked"
+                    HorizontalOptions="Center"
+                    SemanticProperties.Hint="Display trip"/>
+            <Button x:Name="btnView" Text="View Trip List" Clicked="btnView_Clicked"
+                    HorizontalOptions="Center"/>
+            <Button x:Name="btnLoad" Text="Load Trip from DB" Clicked="btnLoad_Trip_Clicked"
+                    HorizontalOptions="Center"/>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
